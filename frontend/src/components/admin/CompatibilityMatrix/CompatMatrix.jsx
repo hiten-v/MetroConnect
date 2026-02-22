@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import api from '../utils/api';
 import { Loader } from '../../common/Loader'
-
+const API_URL = import.meta.env.VITE_API_URL;
 const STATUS = {
   direct:       { color: '#22c55e', bg: 'bg-green-500/15',  border: 'border-green-500/40',  label: 'Direct Upgrade',        icon: '✅' },
   intermediate: { color: '#f59e0b', bg: 'bg-amber-500/15',  border: 'border-amber-500/40',  label: 'Needs Intermediate',    icon: '⚠️' },
@@ -14,7 +14,7 @@ export default function CompatMatrix() {
   const [tooltip, setTooltip] = useState(null)
 
   useEffect(() => {
-    api.get('/api/matrix')
+    api.get(`${API_URL}/api/matrix`)
       .then(r => { setMatrix(r.data.data || []); setLoading(false) })
       .catch(() => setLoading(false))
   }, [])

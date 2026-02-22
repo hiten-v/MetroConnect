@@ -3,7 +3,7 @@ import { motion } from 'framer-motion'
 import api from '../utils/api';
 import QRTicket from './QRTicket'
 import { useBooking } from '../../../context/BookingContext'
-
+const API_URL = import.meta.env.VITE_API_URL;
 export default function BookingConfirmation({ route, onNewBooking }) {
   const { source, destination, setBooking, booking } = useBooking()
   const [loading, setLoading]   = useState(false)
@@ -15,7 +15,7 @@ export default function BookingConfirmation({ route, onNewBooking }) {
     setLoading(true)
     setError(null)
     try {
-      const { data } = await api.post('/api/bookings', {
+      const { data } = await api.post(`${API_URL}/api/bookings`, {
         source: source.name,
         destination: destination.name,
         route,

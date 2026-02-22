@@ -1,6 +1,6 @@
 import { createContext, useContext, useEffect, useState } from 'react';
 import api from '../utils/api';
-
+const API_URL = import.meta.env.VITE_API_URL;
 const MetroContext = createContext(null);
 
 export function MetroProvider({ children }) {
@@ -13,8 +13,8 @@ export function MetroProvider({ children }) {
     try {
       setLoading(true);
       const [linesRes, stationsRes] = await Promise.all([
-        api.get('/api/lines'),
-        api.get('/api/stations'),
+        api.get(`${API_URL}/api/lines`),
+        api.get(`${API_URL}/api/stations`),
       ]);
       setLines(linesRes.data.data);
       setStations(stationsRes.data.data);

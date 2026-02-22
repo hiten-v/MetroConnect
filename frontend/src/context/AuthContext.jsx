@@ -1,6 +1,6 @@
 import { createContext, useContext, useState, useEffect } from 'react'
 import api from '../utils/api';
-
+const API_URL = import.meta.env.VITE_API_URL;
 const AuthContext = createContext(null)
 
 export function AuthProvider({ children }) {
@@ -12,7 +12,7 @@ export function AuthProvider({ children }) {
     const token = localStorage.getItem('metro-token')
     if (token) {
       api.defaults.headers.common['Authorization'] = `Bearer ${token}`
-      api.get('/api/auth/me')
+      api.get(`${API_URL}/api/auth/me`)
         .then(res => setUser(res.data.user))
         .catch(() => {
           localStorage.removeItem('metro-token')
@@ -25,7 +25,7 @@ export function AuthProvider({ children }) {
   }, [])
 
   const signup = async (name, email, password) => {
-    const { data } = await api.post('/api/auth/signup', { name, email, password })
+    const { data } = await api.post(`${API_URL}/api/auth/signup`, { name, email, password })
     localStorage.setItem('metro-token', data.token)
     api.defaults.headers.common['Authorization'] = `Bearer ${data.token}`
     setUser(data.user)
@@ -33,7 +33,7 @@ export function AuthProvider({ children }) {
   }
 
   const login = async (email, password) => {
-    const { data } = await api.post('/api/auth/login', { email, password })
+    const { data } = await api.post(`${API_URL}/api/auth/login`, { email, password })
     localStorage.setItem('metro-token', data.token)
     api.defaults.headers.common['Authorization'] = `Bearer ${data.token}`
     setUser(data.user)

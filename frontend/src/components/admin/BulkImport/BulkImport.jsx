@@ -2,7 +2,7 @@ import { useState, useRef } from 'react'
 import { motion } from 'framer-motion'
 import api from '../utils/api';
 import { parseCSV, parseJSON, validateStationData } from '../../../utils/csvParser'
-
+const API_URL = import.meta.env.VITE_API_URL;
 export default function BulkImport() {
   const [rows,       setRows]       = useState([])
   const [fileName,   setFileName]   = useState('')
@@ -46,10 +46,10 @@ export default function BulkImport() {
     setProgress(0)
     const interval = setInterval(() => setProgress(p => Math.min(p + 12, 90)), 200)
     try {
-      const { data } = await api.post('/api/import/commit', { stations: rows })
+      const { data } = await api.post(`${API_URL}/api/import/commit`, { stations: rows })
       setProgress(100)
       setResult(data.data)
-    } catch {
+    } catch (err) {
       alert('Import failed')
     } finally {
       clearInterval(interval)

@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { DragDropContext, Droppable, Draggable } from '@hello-pangea/dnd'
 import api from '../utils/api';
-
+const API_URL = import.meta.env.VITE_API_URL;
 export default function LineEditor({ line, onUpdate }) {
   const [stations, setStations] = useState(
     [...(line.stations || [])].sort((a, b) => a.order - b.order)
@@ -26,7 +26,7 @@ export default function LineEditor({ line, onUpdate }) {
   const handleSave = async () => {
     setSaving(true)
     try {
-      await api.put(`/api/lines/${line._id}/stations`, {
+      await api.put(`${API_URL}/api/lines/${line._id}/stations`, {
         stations: stations.map(s => ({
           stationId: s.stationId?._id || s.stationId,
           order: s.order,
@@ -34,7 +34,7 @@ export default function LineEditor({ line, onUpdate }) {
       })
       setSaved(true)
       if (onUpdate) onUpdate()
-    } catch {
+    } catch (err) {
       alert('Save failed')
     } finally {
       setSaving(false)
