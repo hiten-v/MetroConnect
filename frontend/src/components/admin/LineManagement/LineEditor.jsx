@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { DragDropContext, Droppable, Draggable } from '@hello-pangea/dnd'
-import axios from 'axios'
+import api from '../utils/api';
 
 export default function LineEditor({ line, onUpdate }) {
   const [stations, setStations] = useState(
@@ -26,7 +26,7 @@ export default function LineEditor({ line, onUpdate }) {
   const handleSave = async () => {
     setSaving(true)
     try {
-      await axios.put(`/api/lines/${line._id}/stations`, {
+      await api.put(`/api/lines/${line._id}/stations`, {
         stations: stations.map(s => ({
           stationId: s.stationId?._id || s.stationId,
           order: s.order,

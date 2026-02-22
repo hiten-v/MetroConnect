@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import axios from 'axios'
+import api from '../utils/api';
 import { Loader } from '../../common/Loader'
 
 const STATUS = {
@@ -14,7 +14,7 @@ export default function CompatMatrix() {
   const [tooltip, setTooltip] = useState(null)
 
   useEffect(() => {
-    axios.get('/api/matrix')
+    api.get('/api/matrix')
       .then(r => { setMatrix(r.data.data || []); setLoading(false) })
       .catch(() => setLoading(false))
   }, [])

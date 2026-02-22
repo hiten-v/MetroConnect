@@ -1,6 +1,6 @@
 import { useState, useRef } from 'react'
 import { motion } from 'framer-motion'
-import axios from 'axios'
+import api from '../utils/api';
 import { parseCSV, parseJSON, validateStationData } from '../../../utils/csvParser'
 
 export default function BulkImport() {
@@ -46,7 +46,7 @@ export default function BulkImport() {
     setProgress(0)
     const interval = setInterval(() => setProgress(p => Math.min(p + 12, 90)), 200)
     try {
-      const { data } = await axios.post('/api/import/commit', { stations: rows })
+      const { data } = await api.post('/api/import/commit', { stations: rows })
       setProgress(100)
       setResult(data.data)
     } catch {

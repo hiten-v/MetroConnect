@@ -1,5 +1,5 @@
 import { createContext, useContext, useEffect, useState } from 'react';
-import axios from 'axios';
+import api from '../utils/api';
 
 const MetroContext = createContext(null);
 
@@ -13,8 +13,8 @@ export function MetroProvider({ children }) {
     try {
       setLoading(true);
       const [linesRes, stationsRes] = await Promise.all([
-        axios.get('/api/lines'),
-        axios.get('/api/stations'),
+        api.get('/api/lines'),
+        api.get('/api/stations'),
       ]);
       setLines(linesRes.data.data);
       setStations(stationsRes.data.data);

@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
-import axios from 'axios'
+import api from '../utils/api';
 import QRTicket from './QRTicket'
 import { useBooking } from '../../../context/BookingContext'
 
@@ -15,7 +15,7 @@ export default function BookingConfirmation({ route, onNewBooking }) {
     setLoading(true)
     setError(null)
     try {
-      const { data } = await axios.post('/api/bookings', {
+      const { data } = await api.post('/api/bookings', {
         source: source.name,
         destination: destination.name,
         route,
