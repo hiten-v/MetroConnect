@@ -1,6 +1,6 @@
 import { useState, useRef } from 'react'
 import { motion } from 'framer-motion'
-import api from '../utils/api';
+import api from '../../../utils/api';
 import { parseCSV, parseJSON, validateStationData } from '../../../utils/csvParser'
 const API_URL = import.meta.env.VITE_API_URL;
 export default function BulkImport() {

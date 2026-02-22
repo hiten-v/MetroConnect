@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
-import api from '../utils/api';
+import api from '../../../utils/api';
 import QRTicket from './QRTicket'
 import { useBooking } from '../../../context/BookingContext'
 const API_URL = import.meta.env.VITE_API_URL;

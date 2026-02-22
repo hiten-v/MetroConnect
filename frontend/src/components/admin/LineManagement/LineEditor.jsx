@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { DragDropContext, Droppable, Draggable } from '@hello-pangea/dnd'
-import api from '../utils/api';
+import api from '../../../utils/api';
 const API_URL = import.meta.env.VITE_API_URL;
 export default function LineEditor({ line, onUpdate }) {
   const [stations, setStations] = useState(

@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import api from '../utils/api';
+import api from '../../../utils/api';
 import { Loader } from '../../common/Loader'
 const API_URL = import.meta.env.VITE_API_URL;
 const STATUS = {
