@@ -4,7 +4,8 @@ import StationDetailPanel from './StationDetailPanel'
 import { useBooking } from '../../context/BookingContext'
 
 export default function MetroMap({ lines, stations }) {
-  const { scale, translate, onWheel, onMouseDown, onMouseMove, onMouseUp, zoomIn, zoomOut, reset } = useMetroMap()
+  // const { scale, translate, onWheel, onMouseDown, onMouseMove, onMouseUp, zoomIn, zoomOut, reset } = useMetroMap()
+  const { containerRef, scale, translate, onMouseDown, onMouseMove, onMouseUp, zoomIn, zoomOut, reset } = useMetroMap()
   const { selectedRoute } = useBooking()
   const [selectedStation, setSelectedStation] = useState(null)
   const [hoveredStation,  setHoveredStation]  = useState(null)
@@ -80,7 +81,8 @@ export default function MetroMap({ lines, stations }) {
 
       {/* SVG pan/zoom container */}
       <div
-        onWheel={onWheel}
+        ref={containerRef} 
+        // onWheel={onWheel}
         onMouseDown={onMouseDown}
         onMouseMove={onMouseMove}
         onMouseUp={onMouseUp}
