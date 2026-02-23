@@ -1,4 +1,4 @@
-# 🚇 MetroCoonect – Metro Booking Service
+# 🚇 MetroConnect – Metro Booking Service
 
 ## Quick Start (5 steps)
 
