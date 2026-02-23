@@ -33,8 +33,8 @@ npm run dev
 Starts both Express (`:5000`) and Vite (`:5173`) concurrently.
 
 ### 5. Open browser
-- **Passenger App:** http://localhost:5173
-- **Admin Panel:** http://localhost:5173/admin
+- **Passenger App:** https://metro-connect-hiten.vercel.app/
+- **Admin Panel:** https://metro-connect-hiten.vercel.app/admin
 
 ---
 
