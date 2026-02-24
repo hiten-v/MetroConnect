@@ -12,7 +12,7 @@ export default function Navbar() {
     () => localStorage.getItem('metro-theme') === 'light'
   )
 
-  // Apply / remove .light class on <html> whenever lightMode changes
+
   useEffect(() => {
     const root = document.documentElement
     if (lightMode) {
@@ -34,7 +34,10 @@ export default function Navbar() {
     <nav className="bg-surface border-b border-metro sticky top-0 z-50 transition-colors duration-300">
       <div className="flex items-center justify-between px-4 md:px-6 h-[60px]">
 
-
+        {/* Logo */}
+        <Link to="/" className="flex items-center gap-2.5" onClick={() => setMenuOpen(false)}>
+          <span className="font-bold text-base md:text-lg">MetroConnect</span>
+        </Link>
         {/* Desktop right side */}
         <div className="hidden md:flex items-center gap-2">
           {isLoggedIn && (
