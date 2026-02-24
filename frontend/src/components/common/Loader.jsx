@@ -10,7 +10,7 @@ export function Loader({ text = 'Loading...' }) {
 export function ErrorMsg({ message }) {
   return (
     <div className="bg-red-500/10 border border-red-500/30 rounded-lg px-4 py-3 text-red-400 text-sm">
-      ⚠️ {message}
+      {message}
     </div>
   )
 }

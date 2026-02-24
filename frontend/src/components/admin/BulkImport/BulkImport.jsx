@@ -73,7 +73,6 @@ export default function BulkImport() {
         className={`border-2 border-dashed rounded-xl p-10 text-center cursor-pointer transition-all duration-200 mb-5
           ${dragOver ? 'border-accent bg-accent/5' : 'border-metro bg-surface hover:border-accent/50'}`}
       >
-        <div className="text-4xl mb-3">📁</div>
         <p className="text-sm font-medium text-[#e8eaf6]">Drop CSV or JSON file here</p>
         <p className="text-xs text-muted mt-1">or click to browse</p>
         {fileName && (
@@ -110,12 +109,12 @@ export default function BulkImport() {
           </div>
           {validation.errors.map((e, i) => (
             <div key={i} className="px-3 py-1.5 bg-red-500/10 rounded-lg text-xs text-red-400 mb-1.5">
-              ❌ {e.message}
+              {e.message}
             </div>
           ))}
           {validation.warnings.map((w, i) => (
             <div key={i} className="px-3 py-1.5 bg-amber-500/10 rounded-lg text-xs text-amber-400 mb-1.5">
-              ⚠️ {w.message}
+               {w.message}
             </div>
           ))}
         </motion.div>
@@ -177,7 +176,7 @@ export default function BulkImport() {
       {/* Success result */}
       {result && (
         <div className="px-4 py-3 bg-green-500/10 border border-green-500/30 rounded-xl text-xs text-green-400 mb-4">
-          ✅ Import complete — Created: {result.stationsCreated} · Updated: {result.stationsUpdated}
+          Import complete — Created: {result.stationsCreated} · Updated: {result.stationsUpdated}
         </div>
       )}
 
@@ -188,7 +187,7 @@ export default function BulkImport() {
           disabled={importing}
           className="px-5 py-2.5 rounded-xl text-sm font-bold bg-accent text-white hover:bg-accent-h disabled:opacity-50 transition-all"
         >
-          {importing ? '⏳ Importing...' : `📥 Import ${rows.length} Stations`}
+          {importing ? 'Importing...' : `Import ${rows.length} Stations`}
         </button>
       )}
     </div>

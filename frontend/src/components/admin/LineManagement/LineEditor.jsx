@@ -191,7 +191,7 @@ export default function LineEditor({ line, onUpdate }) {
           <button onClick={handleSave} disabled={saving}
             className="px-3 md:px-4 py-1.5 rounded-lg text-xs font-bold bg-accent text-white
                        hover:bg-accent-h disabled:opacity-50 transition-all">
-            {saving ? '⏳' : saved ? '✅ Saved' : '💾 Save'}
+            {saving ? 'Saving...' : saved ? 'Saved' : 'Save'}
           </button>
         </div>
       </div>

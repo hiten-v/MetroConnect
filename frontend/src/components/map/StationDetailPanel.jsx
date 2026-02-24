@@ -54,9 +54,9 @@ export default function StationDetailPanel({ station, onClose }) {
         <div className="mb-5">
           <div className="text-[10px] font-semibold text-muted uppercase tracking-widest mb-2">Facilities</div>
           <div className="flex flex-wrap gap-1.5">
-            {fac.accessible && <Chip icon="♿" label="Accessible" />}
-            {fac.parking    && <Chip icon="🅿️" label="Parking"   />}
-            <Chip icon="🚪" label={`${fac.exits || 2} Exits`} />
+            {fac.accessible && <Chip  label="Accessible" />}
+            {fac.parking    && <Chip label="Parking"   />}
+            <Chip  label={`${fac.exits || 2} Exits`} />
           </div>
         </div>
 
@@ -66,13 +66,13 @@ export default function StationDetailPanel({ station, onClose }) {
             onClick={() => { setSource(station); onClose() }}
             className="w-full py-2 rounded-lg text-xs font-bold bg-accent text-white hover:bg-accent-h transition-all"
           >
-            🟢 Book from here
+            Book from here
           </button>
           <button
             onClick={() => { setDestination(station); onClose() }}
             className="w-full py-2 rounded-lg text-xs font-medium border border-metro text-muted hover:bg-surface2 hover:text-[#e8eaf6] transition-all"
           >
-            🔴 Book to here
+            Book to here
           </button>
         </div>
       </motion.div>

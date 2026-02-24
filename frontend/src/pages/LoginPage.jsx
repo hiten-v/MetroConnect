@@ -80,7 +80,7 @@ export default function LoginPage() {
                          hover:bg-accent-h disabled:opacity-60 disabled:cursor-not-allowed
                          transition-all duration-200 shadow-lg shadow-accent/20"
             >
-              {loading ? '⏳ Signing in...' : '→ Sign In'}
+              {loading ? 'Signing in...' : '→ Sign In'}
             </button>
           </form>
 

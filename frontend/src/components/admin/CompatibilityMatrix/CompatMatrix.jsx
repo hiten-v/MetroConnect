@@ -231,7 +231,7 @@ export default function CompatMatrix() {
                                   cursor-pointer transition-transform duration-150 hover:scale-110
                         ${cfg ? `${cfg.bg} ${cfg.border}` : 'bg-surface border-metro'}`}
                     >
-                      {cfg ? cfg.icon : '❓'}
+                      {cfg ? cfg.icon : '?'}
                     </td>
                   )
                 })}

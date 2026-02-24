@@ -67,7 +67,7 @@ export default function RouteTimeline({ segments }) {
           {/* Transfer gap */}
           {si < segments.length - 1 && (
             <div className="my-2 ml-1.5 px-3 py-1.5 bg-amber-500/10 border border-dashed border-amber-500/40 rounded-md text-xs text-amber-400 flex items-center gap-1.5">
-              🔄 Change to <strong>{segments[si + 1]?.line}</strong> (+5 min)
+              Change to <strong>{segments[si + 1]?.line}</strong> (+5 min)
             </div>
           )}
         </div>

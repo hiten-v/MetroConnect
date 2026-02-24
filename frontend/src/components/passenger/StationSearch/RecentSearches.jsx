@@ -4,7 +4,7 @@ export default function RecentSearches({ searches, onSelect }) {
   return (
     <div className="mt-4">
       <p className="text-[10px] font-semibold tracking-widest uppercase text-muted mb-2.5">
-        🕑 Recent Searches
+         Recent Searches
       </p>
       <div className="flex flex-col gap-1.5">
         {searches.map((s, i) => (
