@@ -1,4 +1,4 @@
-# 🚇 MetroConnect – Metro Booking Service
+# MetroConnect – Metro Booking Service
 
 ## Quick Start (5 steps)
 
@@ -41,31 +41,31 @@ Starts both Express (`:5000`) and Vite (`:5173`) concurrently.
 ## Features
 
 ### Passenger
-- 🔍 Station autocomplete with line color badges and interchange indicators
-- ⇅ Animated swap button for source/destination
-- 🕑 Last 5 recent searches saved in localStorage
-- 🗺️ BFS route finding with transfer penalty (runs client-side, instant results)
-- 📊 Route cards with segment timeline, color-coded by line
-- ⇄ Interchange markers in route steps
-- ✅ QR ticket generation with canvas animation
-- 📥 Download ticket as JSON
+- Station autocomplete with line color badges and interchange indicators
+- Animated swap button for source/destination
+- Last 5 recent searches saved in localStorage
+- BFS route finding with transfer penalty (runs client-side, instant results)
+- Route cards with segment timeline, color-coded by line
+- Interchange markers in route steps
+- QR ticket generation with canvas animation
+- Download ticket as JSON
 
 ### Map
-- 🗺️ Full SVG metro network diagram
-- 🔍 Zoom (scroll wheel or +/- buttons) and pan (drag)
-- 💡 Station labels on hover
-- ⭕ Interchange stations shown with color rings
-- 🎬 Journey path animates (draws itself) when route selected
-- 💛 Non-journey lines dim automatically
-- 📋 Click any station → side panel with facilities + book shortcuts
+- Full SVG metro network diagram
+- Zoom (scroll wheel or +/- buttons) and pan (drag)
+- Station labels on hover
+- Interchange stations shown with color rings
+- Journey path animates (draws itself) when route selected
+- Non-journey lines dim automatically
+- Click any station → side panel with facilities + book shortcuts
 
 ### Admin
-- 🛤️ Line management with drag-and-drop reordering
-- ➕ Remove stations, with auto-save
-- 📥 CSV/JSON bulk import with drag-and-drop upload zone
-- ✅ Client-side validation (duplicates, missing fields)
-- 📊 Preview table before committing
-- 🔢 Version compatibility matrix with color-coded cells and hover tooltips
+- Line management with drag-and-drop reordering
+- Remove stations, with auto-save
+- CSV/JSON bulk import with drag-and-drop upload zone
+- Client-side validation (duplicates, missing fields)
+- Preview table before committing
+- Version compatibility matrix with color-coded cells and hover tooltips
 
 ---
 
