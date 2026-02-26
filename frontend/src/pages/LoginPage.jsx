@@ -40,9 +40,6 @@ export default function LoginPage() {
         <div className="bg-surface border border-metro rounded-2xl p-8">
           {/* Header */}
           <div className="text-center mb-8">
-            <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-accent to-pink-500 flex items-center justify-center text-2xl font-bold text-white mx-auto mb-4">
-              M
-            </div>
             <h1 className="text-2xl font-bold text-[#e8eaf6]">Welcome back</h1>
             <p className="text-muted text-sm mt-1">Sign in to book metro tickets</p>
           </div>
@@ -50,7 +47,7 @@ export default function LoginPage() {
           {/* Error */}
           {error && (
             <div className="bg-red-500/10 border border-red-500/30 rounded-lg px-4 py-3 text-red-400 text-sm mb-5">
-              ⚠️ {error}
+             {error}
             </div>
           )}
 
